@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="JavaAbgabe:jar">
+    <output-path>$USER_HOME$/Desktop/hawhaw</output-path>
+    <root id="archive" name="JavaAbgabe.jar">
+      <element id="module-output" name="JavaAbgabe" />
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/src/sample/META-INF/MANIFEST.MF" />
+      </element>
+    </root>
+  </artifact>
+</component>
