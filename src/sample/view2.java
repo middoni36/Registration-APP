@@ -235,7 +235,7 @@ public class view2 extends Application  {
                     houzma=new Stack();
 
                     String ink="";
-                    int a=92;
+                    int a=92; //ist gleich / in char
 
 
                     String input=path.getText();

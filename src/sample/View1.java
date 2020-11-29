@@ -92,34 +92,34 @@ public class View1 extends Application {
     @Override
     public void start( Stage primaryStage) throws Exception {
 
-stage2=primaryStage;
+       stage2=primaryStage;
 
         //setting of welcome Text
         textsetting2(welcome,createLingrad(Color.GREENYELLOW,Color.RED,Color.BLUE));
 
-//add balls to the HBox
+//add balls to the HBox ,, two balls return a groupe of balls as one object
         HBox ballbox =new HBox(twoballs(c1,wb1),twoballs(c2,wb2),twoballs(c3,wb3),twoballs(c4,wb4),twoballs(c5,wb5));
 
 
         welcome.setLayoutX(180);
         welcome.setLayoutY(160);
+
         ballbox.setLayoutX(220);
         ballbox.setLayoutY(180);
         ballbox.setSpacing(60);
 
 
-       a2.getChildren().addAll(ballbox,welcome);
+       a2.getChildren().addAll(ballbox,welcome); //add balls tp anchorpane
 
 
-
+     // zwei horizontalish recantgle
      r1.setFill(createLingradwithrgb(Color.web("#d9ace8"),Color.web("#c1edf5")));
-
      r2.setFill(createLingrad(Color.web("#d9ace8"),Color.web("#91f8fa"),Color.web("#ccfbfc")));
 
 
-   r3.setFill(Color.WHITE);
-   r3.setOpacity(0.5);
-
+      r3.setFill(Color.WHITE);
+      r3.setOpacity(0.5);
+       // transition starten
         movingballs().play();
 
 
@@ -137,6 +137,8 @@ stage2=primaryStage;
          textsetting(signin,createLingradwithrgb(Color.WHITE,Color.ALICEBLUE));
          //give gridpane name as variable  and add  buttonsto the gridpane
          setpane(g1);
+
+         // Logic class Thread run
          view1logic v1log=new view1logic();
          v1log.run();
 
@@ -156,7 +158,7 @@ stage2=primaryStage;
       @Override
       public void handle( MouseEvent event) {
 
-
+          // mouse inner circle
           c9.setCenterX(event.getX()+5);
           c9.setCenterY(event.getY()+5);
           c9.setRadius(20);
@@ -172,7 +174,7 @@ stage2=primaryStage;
 
 
 
-
+  // wenn wir innerhalb der scene und auf ENter drücken dann keypress wird true sein
         s1.addEventHandler(KeyEvent.KEY_PRESSED, new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent event) {
@@ -294,7 +296,7 @@ stage2=primaryStage;
 
     }
 
-
+   // setting the vue of texts in a grid
     public void setpane(GridPane a){
         Text password =new Text("Password : ");
         Text tex=new Text("User ID :");
@@ -465,16 +467,6 @@ public class view1logic extends Application  implements Runnable{
 
 
         login(confirm,userpass,tf,keypress);
-
-
-
-
-
-
-
-
-
-
 
 
 
